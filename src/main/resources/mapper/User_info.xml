@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserInfoMapper">
+  <select id="selectUserInfo" resultType="userVO">
+    select * from user_info
+    <where>
+    	<if test='uiId != null and uiId !=""'>
+    		and ui_id = #{uiId}
+    	</if>
+    		<if test='uiPwd != null and uiPWd !=""'>
+    		and ui_pwd = #{uiPwd}
+    	</if>
+    </where>
+    
+  </select>
+</mapper>
